@@ -1,9 +1,12 @@
+import { Suspense } from 'react'
 import { ListOfPosts } from './ListOfPosts'
 
 export default async function PostPage ({ params }) {
   return (
     <section>
-      <ListOfPosts />
+      <Suspense fallback={<p>Cargando post...</p>}>
+        <ListOfPosts />
+      </Suspense>
     </section>
   )
 }
